@@ -60,6 +60,33 @@ console.log("%c_> 4-2. shift : remove an item to the beginning", 'color:red;');
 fruits.shift();
 fruits.shift();
 console.log(fruits);
-console.log("%c_> note!!! shift, unshift are slower than pop, push", 'color:blue;');
+// Note!!! shift, unshift are slower than pop, push
+console.log("%c_> Note!!! shift, unshift are slower than pop, push", 'color:blue;');
 
-// note!!! shift, unshift are slower than pop, push
+// 5. splice : remove an item by index position
+console.log("%c_> 5. splice : remove an item by index position ", 'color:red;');
+fruits.push('🐱‍💻','🐱‍🐉','🐱‍👓','🐱‍🚀');
+console.log(fruits);
+fruits.splice(3,1); // 원하는 위치의 정
+console.log(fruits);
+fruits.splice(3,1,'🐱‍','👀'); // 원하는 위치의 정
+console.log(fruits);
+
+// 6. combine two arrays
+console.log("%c_> 6. combine two arrays ", 'color:red;');
+const fruits2 = ['A','B','A','B','A','B','A','B','A','B','A'];
+const newfruits = fruits.concat(fruits2);
+console.log(newfruits);
+
+// 7. Searching : Find the index
+console.log("%c_> 7. Searching : Find the index", 'color:red;');
+console.log(newfruits.indexOf("A"));
+console.log(newfruits.includes("A"));
+
+// 8. lastindexOf
+console.log(newfruits);
+console.log(newfruits.indexOf("A"));
+console.log(newfruits.lastIndexOf("A"));
+
+console.log(`pop info : ${newfruits.pop()}`);
+console.log(newfruits);
