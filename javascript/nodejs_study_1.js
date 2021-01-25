@@ -164,6 +164,7 @@ console.log(Human.testString('sssss'));
 // console.log(testInstance.testString('ttttt'));
 
 /************** Promise ********************/
+
 console.log('/********* Promise ***********/');
 
 const condition = false;
