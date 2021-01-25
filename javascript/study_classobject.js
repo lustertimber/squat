@@ -74,8 +74,7 @@ console.log(user1.age);
 console.log("%c_> Fields (public, private)", 'color:red;font-weight:bold');
 class Experiment {
     publicField     = 2;
-    #privateFie
-    ld   = 0;
+    #privateField   = 0;
 }
 const experiment = new Experiment();
 console.log(experiment.publicField);
