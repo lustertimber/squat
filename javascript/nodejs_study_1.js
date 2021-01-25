@@ -167,21 +167,84 @@ console.log(Human.testString('sssss'));
 
 console.log('/********* Promise ***********/');
 
-const condition = false;
-const promise = new Promise((resolve, reject) => {
-    if(condition)
-        resolve('성공');
-    else
-        reject('실패');
-});
+// const condition = true;
+// const promise   = new Promise((resolve, reject) => {
+//     if(condition)
+//         resolve('성공1');
+//     else
+//         reject('실패');
+// });
 
-promise
-.then((message)=> {
-    console.log(message);
-})
-.catch((error)=> {
-    console.log(error);
-})
-.finally(() => {
-    console.log('무조건');
-});
+// promise
+//     .then((message) => {
+//         console.log(message);
+//     })
+//     .catch((error)=> {
+//         console.log(error);
+//     })
+//     .finally(() => {
+//         console.log('무조건');
+//     });
+
+
+// promise
+//     .then((message) => {
+//         console.log(message);
+//         return new Promise((resolve,reject) => {
+//             resolve('성공2');
+//         })
+//     })
+//     .then((message2) => {
+//         console.log(message2);
+//         return new Promise((resolve,reject) => {
+//             resolve('성공3');
+//         })
+//     })
+//     .then((message3) => {
+//         console.log(message3);
+//         console.log('/********* Promise 3 ***********/');
+//     })
+//     .catch((error) => {
+//         console.error(error);
+//     })
+
+// 해당 코드는 실행되지 않음
+// function findAndSaveUSer(Users) {
+//     Users.findOne({})
+//         .then((user) => {
+//             user.name = 'zero';
+//             return user.save();
+//         })
+//         .then((user) => {
+//             return Users.findOne({gender:'m'});
+//         })
+//         .then((user)  => {
+//             // 생략
+//         })
+//         .catch(err => {
+//             console.error(err);
+//         });
+// }
+
+const promise1 = Promise.resolve(true);
+const promise2 = Promise.resolve(false);
+
+Promise.all([promise1,promise2])
+    .then((result) => {
+        if(result[0] === true && result[1] === true) {
+            console.log('성공1 성공2');
+        }
+        else if (result[0] !== true && result[1] === true) {
+            console.log('성공2 만');
+        }
+        else if (result[0] === true && result[1] !== true) {
+            console.log('성공1 만');
+        }
+        else {
+            console.log('둘다 실패');
+        }
+    })
+    .catch((error) => {
+        console.error(error)
+    });
+
